@@ -8,7 +8,10 @@ export default function RootLayout ({
 }>) {
   return (
     <main className="relative h-screen w-full">
-
+      <div className="absolute size-full">
+        
+      </div>
+      {children}
     </main>
   );
 };
