@@ -1,17 +1,21 @@
 import type {Config} from 'jest';
+import nextJest from 'next/jest.js';
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
 
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\Acer\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -85,45 +89,32 @@ const config: Config = {
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    // Handle CSS imports (with CSS modules)
+    // https://jestjs.io/docs/webpack#mocking-css-modules
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+ 
+    // Handle CSS imports (without CSS modules)
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
+ 
+    // Handle image imports
+    // https://jestjs.io/docs/webpack#handling-static-assets
+    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/fileMock.js`,
+ 
+    // Handle module aliases
+    '^@/components/(.*)$': '<rootDir>/components/$1',
+ 
+    // Handle @next/font
+    '@next/font/(.*)': `<rootDir>/__mocks__/nextFontMock.js`,
+    // Handle next/font
+    'next/font/(.*)': `<rootDir>/__mocks__/nextFontMock.js`,
+    // Disable server-only
+    'server-only': `<rootDir>/__mocks__/empty.js`,
+  },
 
-  // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  // modulePathIgnorePatterns: [],
-
-  // Activates notifications for test results
-  // notify: false,
-
-  // An enum that specifies notification mode. Requires { notify: true }
-  // notifyMode: "failure-change",
-
-  // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
-
-  // Run tests from one or more projects
-  // projects: undefined,
-
-  // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
-
-  // Automatically reset mock state before every test
-  // resetMocks: false,
-
-  // Reset the module registry before running each individual test
-  // resetModules: false,
-
-  // A path to a custom resolver
-  // resolver: undefined,
-
-  // Automatically restore mock state and implementation before every test
-  // restoreMocks: false,
-
-  // The root directory that Jest should scan for tests and modules within
-  // rootDir: undefined,
-
-  // A list of paths to directories that Jest should use to search for files in
-  // roots: [
-  //   "<rootDir>"
-  // ],
+  roots: [
+    "<rootDir>"
+  ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
@@ -142,6 +133,7 @@ const config: Config = {
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
+  
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -169,20 +161,15 @@ const config: Config = {
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
 
-  // A map from regular expressions to paths to transformers
-  // transform: undefined,
-
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
+  transform: {
+    // Use babel-jest to transpile tests with the next/babel preset
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+  },
   transformIgnorePatterns: [
     "\\\\node_modules\\\\",
     "\\.pnp\\.[^\\\\]+$"
   ],
-
-  // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
-  // unmockedModulePathPatterns: undefined,
-
-  // Indicates whether each individual test should be reported during the run
-  // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],
@@ -191,4 +178,4 @@ const config: Config = {
   // watchman: true,
 };
 
-export default config;
+export default createJestConfig(config);
