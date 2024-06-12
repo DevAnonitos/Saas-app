@@ -2,12 +2,17 @@
   "name": "saas-app",
   "version": "0.1.0",
   "private": true,
+  "description": "Build an AI Saas web-app",
+  "author": "DevAnonitos",
+  "license": "MIT",
+  "keywords": ["next.js", "react.js", "jest", "clerk", "tailwindcss", "shacdnUI", "convex"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.4",
