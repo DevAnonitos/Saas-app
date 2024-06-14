@@ -5,7 +5,15 @@
   "description": "Build an AI Saas web-app",
   "author": "DevAnonitos",
   "license": "MIT",
-  "keywords": ["next.js", "react.js", "jest", "clerk", "tailwindcss", "shacdnUI", "convex"],
+  "keywords": [
+    "next.js",
+    "react.js",
+    "jest",
+    "clerk",
+    "tailwindcss",
+    "shacdnUI",
+    "convex"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
