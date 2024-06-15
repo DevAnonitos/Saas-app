@@ -18,9 +18,7 @@ const MobileNav = () => {
     <section>
       <Sheet>
         <SheetTrigger>
-          <Button>
-            Dev
-          </Button>
+          Dev
         </SheetTrigger>
         <SheetContent side="left" className='border-none'>
           <Link href="/" className='flex cursor-pointer items-center gap-1 pb-10 pl-4'>
