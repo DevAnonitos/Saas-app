@@ -8,6 +8,11 @@ import { usePathname, useRouter } from 'next/navigation';
 import { SignIn, SignedOut, useClerk } from '@clerk/nextjs';
 
 const LeftSidebar = () => {
+
+  const pathName = usePathname();
+  const router = useRouter();
+  // const { signOut } = useClerk();
+
   return (
     <div>LeftSidebar</div>
   );
