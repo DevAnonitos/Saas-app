@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Toaster } from '@/components/ui/toaster';
 
 import LoaderSpinner from '@/components/LoaderSpinner';
+import PodcastPlayer from '@/components/PodcastPlayer';
 
 import LeftSidebar from '@/components/LeftSidebar';
 import RightSidebar from '@/components/RightSidebar';
@@ -33,6 +34,8 @@ const RootLayout = ({
         </section>
         <RightSidebar />
       </main>
+
+      <PodcastPlayer />
     </div>
   );
 };
