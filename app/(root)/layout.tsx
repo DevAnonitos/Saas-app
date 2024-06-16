@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 import { Toaster } from '@/components/ui/toaster';
+
+import LoaderSpinner from '@/components/LoaderSpinner';
 
 import LeftSidebar from '@/components/LeftSidebar';
 import RightSidebar from '@/components/RightSidebar';
@@ -23,7 +25,9 @@ const RootLayout = ({
             </div>
             <div className='flex flex-col md:pb-14'>
               <Toaster />
-              {children}
+              <Suspense fallback={<LoaderSpinner />}>
+                {children}
+              </Suspense>
             </div>
           </div>
         </section>

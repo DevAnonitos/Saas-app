@@ -1,6 +1,10 @@
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+
+import LoaderSpinner from "@/components/LoaderSpinner";
+
 import AudioProvider from "@/providers/AudioProvider";
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 
@@ -23,9 +27,11 @@ export default function RootLayout({
     // <ConvexClerkProvider>
       <html lang="en">
         {/* <AudioProvider> */}
-          <body className={`${manrope.className}`}>
-            {children}
-          </body>
+          <Suspense fallback={<LoaderSpinner />}>
+            <body className={`${manrope.className}`}>
+              {children}
+            </body>
+          </Suspense>
         {/* </AudioProvider> */}
       </html>
     // </ConvexClerkProvider>

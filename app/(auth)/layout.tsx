@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
+import LoaderSpinner from "@/components/LoaderSpinner";
 import Image from "next/image";
 
 export default function AuthLayout ({
@@ -11,7 +12,9 @@ export default function AuthLayout ({
       <div className="absolute size-full">
         
       </div>
-      {children}
+      <Suspense fallback={<LoaderSpinner />}>
+        {children}
+      </Suspense>
     </main>
   );
 };
