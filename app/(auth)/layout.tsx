@@ -10,11 +10,10 @@ export default function AuthLayout ({
   return (
     <main className="relative h-screen w-full">
       <div className="absolute size-full">
-        
       </div>
-      <Suspense fallback={<LoaderSpinner />}>
-        {children}
-      </Suspense>
+        <Suspense fallback={<LoaderSpinner />}>
+          {children}
+        </Suspense>
     </main>
   );
 };
