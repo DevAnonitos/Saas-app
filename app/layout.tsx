@@ -27,11 +27,11 @@ export default function RootLayout({
     // <ConvexClerkProvider>
       <html lang="en">
         {/* <AudioProvider> */}
-          <Suspense fallback={<LoaderSpinner />}>
-            <body className={`${manrope.className}`}>
+          <body className={`${manrope.className}`}>
+            <Suspense fallback={<LoaderSpinner />}>
               {children}
-            </body>
-          </Suspense>
+            </Suspense>
+          </body>
         {/* </AudioProvider> */}
       </html>
     // </ConvexClerkProvider>
