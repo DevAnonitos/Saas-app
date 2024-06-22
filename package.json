@@ -36,7 +36,6 @@
     "clsx": "^2.1.1",
     "convex": "^1.12.1",
     "embla-carousel": "^8.1.4",
-    "embla-carousel-auto-scroll": "^8.1.4",
     "embla-carousel-autoplay": "^8.1.4",
     "embla-carousel-react": "^8.1.4",
     "lucide-react": "^0.394.0",
