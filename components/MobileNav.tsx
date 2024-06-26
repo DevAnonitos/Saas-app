@@ -31,7 +31,7 @@ const MobileNav = () => {
             className='cursor-pointer' 
           />
         </SheetTrigger>
-        <SheetContent side="left" className='border-none'>
+        <SheetContent side="left" className='border-none bg-black-1'>
           <Link href="/" className='flex cursor-pointer items-center gap-1 pb-10 pl-4'>
             <h1 className="text-24 font-extrabold  text-white-1 ml-2">
               PodFy
@@ -39,7 +39,7 @@ const MobileNav = () => {
           </Link>
           <div className='flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto'>
             <SheetClose asChild>
-              <nav className='flex h-full flex-col gap-6 text-white'>
+              <nav className='flex h-full flex-col gap-6 text-white-1'>
                 {sidebarLink.map(({ route, label, imgURL }) => {
                   const isActive = pathName === route || pathName.startsWith(`${route}/`);
 
@@ -59,7 +59,7 @@ const MobileNav = () => {
                           width={24} 
                           height={24} 
                         />
-                        <p>{label}</p>
+                        <p className='text-white-1'>{label}</p>
                       </Link>
                     </SheetClose>
                   )

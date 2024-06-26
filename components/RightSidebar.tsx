@@ -19,11 +19,11 @@ const RightSidebar = () => {
   return (
     <section className={cn("right_sidebar h-[calc(100vh-5px)]")}>
       <section>
-        <Header  />
+        <Header headerTitle='Fan like You'  />
       </section>
 
       <section className='flex flex-col gap-8 pt-12'>
-        <Header />
+        <Header headerTitle='Top Podcast' />
         <div className='flex flex-col gap-6'>
 
         </div>
