@@ -113,7 +113,7 @@ const CreatePodcast = () => {
             />
           </div>
           <div className='flex flex-col pt-10'>
-            // Generate Podcast 
+            {/* Generate Podcast  */}
             <div className='mt-10 w-full'>
               
             </div>
