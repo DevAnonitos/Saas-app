@@ -32,6 +32,8 @@ import {
 
 import { Loader } from 'lucide-react';
 
+import GeneratePodcast from '@/components/GeneratePodcast';
+
 const voiceCategories = ['alloy', 'shimmer', 'nova', 'echo', 'fable', 'onyx'];
 const formSchema = z.object({
   podcastTitle: z.string().min(2),
@@ -114,6 +116,7 @@ const CreatePodcast = () => {
           </div>
           <div className='flex flex-col pt-10'>
             {/* Generate Podcast  */}
+            <GeneratePodcast />
             <div className='mt-10 w-full'>
               
             </div>
