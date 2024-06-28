@@ -1,6 +1,8 @@
 "use client";
 
-import React from 'react'
+import React, { Suspense } from 'react';
+import LoaderSpinner from '@/components/LoaderSpinner';
+import PodcastCard from '@/components/PodcastCard';
 
 const Home = () => {
   return (
@@ -10,8 +12,24 @@ const Home = () => {
           New Trending Podcasts ✨
         </h1>
 
-        <div className='bg-slate-200'>
-          PodCast Lists
+        <div className='podcast_grid'>
+          <Suspense fallback={<LoaderSpinner />}>
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+          </Suspense>
         </div>
       </section>
     </div>
