@@ -5,6 +5,9 @@ import LoaderSpinner from './LoaderSpinner';
 import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel';
 
 const Carousel = () => {
+
+  const router = useRouter();
+
   return (
     <section className='flex w-full flex-col gap-4 overflow-hidden'>
       <div className='flex'>
