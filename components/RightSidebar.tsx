@@ -20,6 +20,7 @@ const RightSidebar = () => {
     <section className={cn("right_sidebar h-[calc(100vh-5px)]")}>
       <section>
         <Header headerTitle='Fan like You'  />
+        <Carousel />
       </section>
 
       <section className='flex flex-col gap-8 pt-12'>
