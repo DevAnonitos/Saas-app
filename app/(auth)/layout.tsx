@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import LoaderSpinner from "@/components/LoaderSpinner";
 import Image from "next/image";
 
-export default function AuthLayout ({
+export default function RootLayout ({
   children
 }: Readonly<{
   children: React.ReactNode
