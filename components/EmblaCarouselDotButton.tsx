@@ -12,3 +12,7 @@ type UseDotButtonType = {
   scrollSnaps: number[];
   onDotButtonClick: (index: number) => void;
 };
+
+export const useDotButton = () => {
+
+};
