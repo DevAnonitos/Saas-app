@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import LoaderSpinner from './LoaderSpinner';
+import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel';
 
 const Carousel = () => {
@@ -14,7 +15,10 @@ const Carousel = () => {
 
       </div>
       <div className='flex justify-center gap-2'>
-        
+        <DotButton
+          onClick={() => {}}
+          selected
+        />
       </div>
     </section>
   );
