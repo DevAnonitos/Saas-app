@@ -13,6 +13,15 @@ type UseDotButtonType = {
   onDotButtonClick: (index: number) => void;
 };
 
+type DotButtonProps = {
+  selected: boolean;
+  onClick: () => void;
+};
+
 export const useDotButton = () => {
+
+};
+
+export const DotButton = ({ selected, onClick  }: DotButtonProps) => {
 
 };
